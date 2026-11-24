@@ -1,433 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maqbool Jamali | Portfolio</title>
-    
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Maqbool Jamali - BS Information Technology student portfolio">
+<title>Maqbool Jamali | IT Portfolio</title>
+
+<style>
+:root{--bg:#0b1222;--panel:#162238;--panel2:#1d2d46;--blue:#38bdf8;
+--white:#f8fafc;--muted:#c2cede;--line:#30415c}
+
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--white);line-height:1.7}
+
+a{color:var(--blue);text-decoration:none}
+a:hover{color:#bae6fd}
+
+.container{width:min(1100px,90%);margin:auto}
+
+section{padding:76px 0;border-bottom:1px solid var(--line);scroll-margin-top:82px}
+
+header{position:sticky;top:0;z-index:10;background:#0b1222f2;border-bottom:1px solid var(--line)}
+
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+
+.logo{font-weight:800;font-size:23px;color:white}
+.logo span,.accent{color:var(--blue)}
+
+.nav ul{display:flex;gap:14px;list-style:none;flex-wrap:wrap}
+.nav a{font-size:13px;color:var(--muted)}
+
+.menu{display:none;background:var(--panel);color:white;border:1px solid var(--line);padding:7px 12px;border-radius:7px;font-size:20px}
+
+.eyebrow{color:var(--blue);font-size:13px;font-weight:bold;letter-spacing:1.4px;margin-bottom:8px}
+
+h1{font-size:clamp(36px,6vw,58px);line-height:1.15;margin:12px 0}
+
+h2{font-size:32px;margin-bottom:12px}
+h3{font-size:19px;margin-bottom:9px;color:var(--blue)}
+
+.sub{color:var(--muted);margin-bottom:28px}
+
+.hero{min-height:78vh;display:grid;grid-template-columns:1.5fr .7fr;align-items:center;gap:40px}
+
+.hero p,.card p,.project p{color:var(--muted)}
+
+.hero p{max-width:680px;margin:18px 0 24px}
+
+.avatar{width:220px;height:220px;border:4px solid var(--blue);border-radius:50%;background:var(--panel);display:grid;place-items:center;margin:auto;font-size:65px;font-weight:bold;color:var(--blue)}
+
+.btn{display:inline-block;padding:11px 19px;border-radius:8px;background:var(--blue);color:#07111f;font-weight:bold;margin:4px 7px 4px 0;border:1px solid var(--blue)}
+
+.btn.secondary{background:transparent;color:var(--blue)}
+.btn:hover{color:#07111f;background:#bae6fd}
+
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+
+.card,.project{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:23px;min-width:0}
+
+.card p,.project p{margin:7px 0}
+
+.skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+
+.skill{padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:9px}
+
+.skill small{display:block;color:var(--blue);margin-top:3px}
+
+.tags{color:var(--blue);font-size:14px;margin:10px 0}
+
+.status{display:inline-block;background:#164e63;color:#cffafe;border-radius:20px;padding:4px 11px;font-size:12px;margin-top:10px}
+
+.project .shot{min-height:88px;border:1px dashed #60718a;border-radius:8px;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:13px;padding:12px;margin-bottom:13px}
+
+.timeline{border-left:3px solid var(--blue);padding:4px 0 4px 20px}
+
+.list{padding-left:20px;color:var(--muted)}
+.list li{margin:5px 0}
+
+.contact a{overflow-wrap:anywhere}
+
+input,textarea{width:100%;padding:12px;border-radius:7px;border:1px solid var(--line);background:#0b1222;color:white;font:inherit;margin:5px 0 13px}
+
+label{color:var(--muted);font-size:14px}
+
+footer{text-align:center;padding:28px 0;color:var(--muted)}
+
+@media(max-width:850px){
+.menu{display:block}
+.nav ul{display:none;width:100%;flex-direction:column;background:var(--panel);padding:15px;border-radius:9px}
+.nav ul.open{display:flex}
+.hero{grid-template-columns:1fr;text-align:center;padding:45px 0}
+.hero p{margin-left:auto;margin-right:auto}
+.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
+.skills{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #080d18;
-    color: white;
+@media(max-width:560px){
+section{padding:52px 0}
+h2{font-size:27px}
+.grid2,.grid3,.skills{grid-template-columns:1fr}
+.avatar{width:165px;height:165px;font-size:50px}
+.card,.project{padding:18px}
 }
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 22px 8%;
-    background: #101827;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #263951;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-}
-
-.logo span,
-h2 span,
-.hero h1 span {
-    color: #00e5ff;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 22px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #00e5ff;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-.hero {
-    min-height: 90vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 70px 10%;
-    gap: 50px;
-    background: linear-gradient(135deg, #080d18, #142b48);
-}
-
-.hero-content {
-    max-width: 650px;
-}
-
-.tag {
-    color: #00e5ff;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-    font-size: 13px;
-}
-
-.hero h1 {
-    font-size: 52px;
-    margin-bottom: 20px;
-}
-
-.hero h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    color: #b5c2d3;
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.btn {
-    display: inline-block;
-    background: #00d9f5;
-    color: #08111c;
-    padding: 13px 22px;
-    border-radius: 7px;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 5px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: white;
-    transform: translateY(-4px);
-}
-
-.outline {
-    background: transparent;
-    color: #00e5ff;
-    border: 1px solid #00e5ff;
-}
-
-.hero-image {
-    text-align: center;
-}
-
-.image-border {
-    width: 270px;
-    height: 300px;
-    padding: 8px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #00e5ff, #6865ff);
-    box-shadow: 0 0 40px #00e5ff33;
-}
-
-.image-border img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 25%;
-    border-radius: 20px;
-}
-
-.image-label {
-    margin-top: 15px;
-    color: #00e5ff;
-    font-weight: bold;
-}
-
-section:not(.hero) {
-    padding: 85px 10%;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 38px;
-    margin-bottom: 30px;
-}
-
-#about p:not(.tag) {
-    color: #b5c2d3;
-    line-height: 2;
-    max-width: 800px;
-    margin: auto;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.card,
-.project-card {
-    background: #121e30;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #263951;
-    transition: 0.3s;
-}
-
-.card:hover,
-.project-card:hover {
-    transform: translateY(-8px);
-    border-color: #00e5ff;
-    box-shadow: 0 5px 25px #00e5ff22;
-}
-
-.project-card {
-    max-width: 650px;
-    margin: auto;
-    text-align: left;
-}
-
-.project-card h3 {
-    color: #00e5ff;
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-.project-card p {
-    color: #b5c2d3;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.technology {
-    color: #00e5ff !important;
-}
-
-.status {
-    color: #66e5a5;
-    font-size: 13px;
-}
-
-footer {
-    background: #101827;
-    padding: 25px;
-    text-align: center;
-    color: #b5c2d3;
-    border-top: 1px solid #263951;
-}
-
-@media (max-width: 768px) {
-
-    header {
-        padding: 18px 6%;
-    }
-
-    .menu-toggle {
-        display: block;
-        background: transparent;
-        color: white;
-        border: none;
-        font-size: 25px;
-    }
-
-    nav {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: #101827;
-        padding: 20px;
-    }
-
-    nav.active {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    nav a {
-        margin: 0;
-    }
-
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 60px 6%;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .hero-image {
-        margin-bottom: 20px;
-    }
-
-    .image-border {
-        width: 260px;
-        height: 320px;
-    }
-
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    section:not(.hero) {
-        padding: 65px 6%;
-    }
-}
-
-@media (max-width: 400px) {
-    .cards {
-        grid-template-columns: 1fr;
-    }
-}
-    </style>
+</style>
 </head>
+
 <body>
 
 <header>
-    <a href="#home" class="logo">Maqbool<span>.</span></a>
+<div class="container nav">
 
-    <button class="menu-toggle">☰</button>
+<a class="logo" href="#home">Maqbool<span>.dev</span></a>
 
-    <nav id="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+<ul id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#objective">Objective</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#case-study">Case Study</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#learning">Courses</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#cv">CV</a></li>
+<li><a href="#profiles">Profiles</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
 </header>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <p class="tag">WELCOME TO MY Updated PORTFOLIO</p>
+<main>
 
-        <h1>Hi, I'm <span>Maqbool Jamali</span></h1>
+<section id="home">
+<div class="container hero">
+<div>
 
-        <h2>Python Developer | Data Analyst | IT Student</h2>
+<p class="eyebrow">BS INFORMATION TECHNOLOGY · UNIVERSITY OF SINDH</p>
 
-        <p>
-            I am an Information Technology student passionate
-            about Python programming, data analysis and
-            software development.
-        </p>
+<h1>Hello, I'm <span class="accent">Maqbool Jamali</span></h1>
 
-        <a href="#projects" class="btn">Explore My Work</a>
-        <a href="#contact" class="btn outline">Contact Me</a>
-    </div>
+<h2>IT Student | Aspiring Python Developer & Data Analyst</h2>
 
-    <div class="hero-image">
-        <div class="image-border">
-            <<img src="maqbool-profile.jpg.jpeg" alt="Maqbool Jamali">>
-        </div>
-        <div class="image-label">Maqbool Jamali</div>
-    </div>
+<p>I am a third-year BS Information Technology student at the University of Sindh, Jamshoro. I am developing my skills through coursework, practice and personal projects, with interests in programming, data analysis and web development.</p>
+
+<a class="btn" href="#projects">View Projects</a>
+<a class="btn secondary" href="#contact">Contact Me</a>
+
+</div>
+
+</div>
 </section>
 
 <section id="about">
-    
-    <h2>About <span>Me</span></h2>
+<div class="container">
+<p class="eyebrow">01 / ABOUT</p>
+<h2>About <span class="accent">Me</span></h2>
 
-    <p>
-      
+<div class="card">
+<p>My name is Maqbool Jamali. I am a third-year BS Information Technology student at the University of Sindh, Jamshoro.</p>
 
-Hello! My name is Maqbool Jamali, and I am a third-year BS Information Technology (IT) student at the University of Sindh, Jamshoro.
+<p>I am interested in technology, programming, data analysis and software development. I enjoy learning new skills, solving problems and applying what I learn through practical assignments and projects.</p>
 
-I am a passionate and motivated IT student who loves learning about technology, programming, data analysis, and software development. I believe that learning new skills and improving myself every day are important steps toward building a successful career in the IT industry.
+<p>I am currently building my foundation in Python, Pandas, HTML and CSS, and improving my understanding of data analytics.</p>
+</div>
+</div>
+</section>
 
-I am currently developing my skills in Python Programming, Data Analysis, Pandas, NumPy, SQL, Excel, HTML, CSS, and JavaScript.
+<section id="objective">
+<div class="container">
+<p class="eyebrow">02 / CAREER GOAL</p>
+<h2>Career <span class="accent">Objective</span></h2>
 
-I am particularly interested in Python development and data analytics. I enjoy exploring new technologies, solving problems, working on practical projects, and turning ideas into useful solutions.
+<div class="card">
+<p>To strengthen my technical and problem-solving skills in Information Technology, especially Python programming, data analysis and web development; to gain practical experience through real projects; and to grow into a capable IT professional who contributes to useful technology solutions.</p>
+</div>
+</div>
+</section>
 
-My goal is to become a professional Python Developer and Data Analyst, build real-world projects, gain practical experience, and contribute to the world of technology.
+<section id="education">
+<div class="container">
+<p class="eyebrow">03 / ACADEMICS</p>
+<h2>Education</h2>
 
-I always believe in hard work, consistency, creativity, and continuous learning.
+<div class="grid2">
 
-"Dream Big, Work Hard, Stay Focused, and Never Stop Learning."
-    </p>
+<div class="card">
+<h3>BS Information Technology</h3>
+<p><b>University:</b> University of Sindh, Jamshoro</p>
+<p><b>Level:</b> Third Year</p>
+<p><b>Status:</b> Currently enrolled</p>
+<p><b>Dates:</b> Add your start year and expected completion year</p>
+</div>
+
+<div class="card">
+<h3>Intermediate</h3>
+<p><b>Qualification:</b> Intermediate</p>
+<p><b>Group / College / Year:</b> Add your actual details</p>
+</div>
+
+</div>
+
+<p class="sub" style="margin-top:14px">Add your roll number and exact academic dates before submitting if required by your instructor.</p>
+</div>
 </section>
 
 <section id="skills">
-    <p class="tag">02 / MY EXPERTISE</p>
-    <h2>My <span>Skills</span></h2>
+<div class="container">
+<p class="eyebrow">04 / TECHNICAL ABILITIES</p>
+<h2>My <span class="accent">Skills</span></h2>
+<p class="sub">Current learning level, not expert-level claims.</p>
 
-    <div class="cards">
-        <div class="card">Python</div>
-        <div class="card">Pandas</div>
-        <div class="card">NumPy</div>
-        <div class="card">SQL</div>
-        <div class="card">Excel</div>
-        <div class="card">HTML & CSS</div>
-        <div class="card">JavaScript</div>
-        <div class="card">Data Analysis</div>
-    </div>
+<div class="skills">
+
+<div class="skill">Python<small>Beginner / practicing</small></div>
+<div class="skill">Pandas<small>Basic</small></div>
+<div class="skill">NumPy<small>Beginner</small></div>
+<div class="skill">Excel<small>Basic</small></div>
+<div class="skill">HTML & CSS<small>Basic / practicing</small></div>
+<div class="skill">JavaScript<small>Learning</small></div>
+<div class="skill">Data Analysis<small>Learning</small></div>
+<div class="skill">GitHub & VS Code<small>Basic practice</small></div>
+
+</div>
+</div>
 </section>
 
 <section id="projects">
-    
-    <h2>My <span>Projects</span></h2>
+<div class="container">
+<p class="eyebrow">05 / SELECTED WORK</p>
+<h2>Projects</h2>
+<p class="sub">Project status is shown honestly; update screenshots and links with your real files.</p>
 
-    <div class="project-card">
-        <h3>Sales Data Analysis</h3>
+<div class="grid3">
 
-        <p>
-            A Python-based project to analyze company
-            product sales, monthly quantities, prices
-            and top-selling products.
-        </p>
+<article class="project">
+<h3>Sales Data Analysis</h3>
 
-        <p class="technology">
-            Python | Pandas | NumPy | Matplotlib
-        </p>
+<div class="shot">
+<p>Practice project to explore sales records, products, quantities, revenue and profit using a dataset.</p>
 
-        <span class="status">Practice Project - In Progress</span>
-    </div>
+<p><b>My work:</b> Learning to clean, summarize and analyze tabular data.</p>
+
+<div class="tags">Python · Pandas · NumPy · Matplotlib (learning)</div>
+
+<span class="status">In Progress</span>
+</div>
+
+</article>
+
+</div>
+</div>
+</section>
+
+<section id="case-study">
+<div class="container">
+<p class="eyebrow">06 / PROJECT DETAIL</p>
+<h2>Project <span class="accent">Case Study</span></h2>
+
+<div class="card">
+<h3>Sales Data Analysis – Learning Case Study</h3>
+
+<p><b>Goal:</b> Practice understanding a sales dataset and finding useful information from its records.</p>
+
+<p><b>Approach:</b> Review columns, inspect values, organize data and calculate summaries with Python and Pandas.</p>
+
+<p><b>Tools:</b> Python and Pandas; visualization tools are part of ongoing learning.</p>
+
+<p><b>Learning outcome:</b> Improve practical understanding of tabular data and analysis. The project remains in progress.</p>
+</div>
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+<p class="eyebrow">07 / EXPERIENCE</p>
+<h2>Academic Experience & <span class="accent">Practice</span></h2>
+
+<div class="card">
+<p>I am a student and do not claim professional employment experience. My experience so far is based on university coursework, lab assignments, personal practice and the projects listed on this portfolio.</p>
+
+<p>Relevant areas include programming practice, website creation, data handling and learning version control and cloud deployment.</p>
+</div>
+</div>
+</section>
+
+<section id="learning">
+<div class="container">
+<p class="eyebrow">08 / CONTINUOUS LEARNING</p>
+<h2>Courses & <span class="accent">Certifications</span></h2>
+
+<div class="card">
+<h3>Current study areas</h3>
+
+<ul class="list">
+<li>Python programming and data analysis</li>
+<li>Pandas and introductory NumPy</li>
+<li>HTML and CSS</li>
+<li>Cloud Computing as university coursework</li>
+</ul>
+
+<p style="margin-top:12px">No unverified professional certificate is claimed. Add certificate name, issuer and date only when you have the actual certificate.</p>
+</div>
+</div>
+</section>
+
+<section id="achievements">
+<div class="container">
+<p class="eyebrow">09 / DEVELOPMENT</p>
+<h2>Achievements & <span class="accent">Activities</span></h2>
+
+<div class="card">
+<p>Ongoing academic progress in BS Information Technology and continued practical learning through assignments and personal projects.</p>
+
+<p>Formal awards, competition placements and workshop certificates can be added here when you have verified details.</p>
+</div>
+</div>
+</section>
+
+<section id="cv">
+<div class="container">
+<p class="eyebrow">10 / RESUME</p>
+<h2>My <span class="accent">CV</span></h2>
+
+<div class="card">
+<p>Open or download my CV in PDF format.</p>
+
+<a class="btn" href="Maqbool_Jamali_CV.pdf" target="_blank" rel="noopener">View CV (PDF)</a>
+
+<a class="btn secondary" href="Maqbool_Jamali_CV.pdf" download>Download CV</a>
+
+<p class="sub" style="margin-top:12px">Keep the PDF in the same folder as index.html and preserve this exact filename.</p>
+</div>
+</div>
+</section>
+
+<section id="profiles">
+<div class="container">
+<p class="eyebrow">11 / ONLINE PROFILES</p>
+<h2>Professional <span class="accent">Profiles</span></h2>
+
+<div class="grid2">
+
+<div class="card">
+<h3>GitHub</h3>
+<p>Code repositories and project work.</p>
+<a href="https://github.com/maqbooljamali358-stack" target="_blank" rel="noopener">github.com/maqbooljamali358-stack</a>
+</div>
+
+<div class="card">
+<h3>LinkedIn</h3>
+<p>code repositories and project work</p>
+<a href="https://www.linkedin.com/in/maqbool-jamali-0a0262364?utm_source=share_via&utm_content=profile&utm_medium=member_android"></a>
+</div>
+
+</div>
+</div>
 </section>
 
 <section id="contact">
-    
-    <h2>Contact <span>Me</span></h2>
+<div class="container">
+<p class="eyebrow">12 / GET IN TOUCH</p>
+<h2>Contact <span class="accent">Me</span></h2>
 
-    <p>Let's connect and work together!</p>
+<div class="grid2">
 
-    <a href="mailto:YOUR-EMAIL@example.com" class="btn">
-        Send Me an Email
-    </a>
+<div class="card contact">
+<h3>Contact details</h3>
+<p><b>Name:</b> Maqbool Jamali</p>
+<p><b>University:</b> University of Sindh, Jamshoro</p>
+<p><b>Email:</b> [maqbooljamaliwd@gmail.com]</p>
+<p><b>Phone:</b> [03480038450]</p>
+</div>
+
+<div class="card">
+<h3>Send a message</h3>
+
+<form id="contactForm">
+
+<label for="visitorName">Your name</label>
+<input id="visitorName" required>
+
+<label for="visitorEmail">Your email</label>
+<input id="visitorEmail" type="email" required>
+
+<label for="visitorMessage">Message</label>
+<textarea id="visitorMessage" rows="4" required></textarea>
+
+<button class="btn" type="submit">Open email app to send</button>
+
+</form>
+
+<p class="sub">This opens the visitor's email app; it does not send messages through a server.</p>
+</div>
+
+</div>
+</div>
 </section>
 
+</main>
+
 <footer>
-    <p>© 2026 Maqbool Jamali. All Rights Reserved.</p>
+<div class="container">
+<p>© 2026 Maqbool Jamali · BS Information Technology · University of Sindh, Jamshoro</p>
+<p><a href="#home">Back to top ↑</a></p>
+</div>
 </footer>
 
 <script>
-    
-const menuButton = document.querySelector(".menu-toggle");
-const navbar = document.querySelector("nav");
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('navLinks');
 
-menuButton.addEventListener("click", function () {
-    navbar.classList.toggle("active");
-
-    if (navbar.classList.contains("active")) {
-        menuButton.textContent = "✕";
-    } else {
-        menuButton.textContent = "☰";
-    }
+menuBtn.addEventListener('click',()=>{
+    nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded',nav.classList.contains('open'));
 });
 
-// Close menu after clicking a link
-document.querySelectorAll("nav a").forEach(function(link) {
-    link.addEventListener("click", function() {
-        navbar.classList.remove("active");
-        menuButton.textContent = "☰";
+nav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
     });
 });
+
+document.getElementById('contactForm').addEventListener('submit',e=>{
+    e.preventDefault();
+
+    const name=document.getElementById('visitorName').value;
+    const email=document.getElementById('visitorEmail').value;
+    const msg=document.getElementById('visitorMessage').value;
+
+    const subject=encodeURIComponent('Portfolio message from '+name);
+    const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+msg);
+
+    window.location.href='mailto:maqbooljamaliwd@gmail.com?subject='+subject+'&body='+body;
+});
 </script>
+
 </body>
 </html>
